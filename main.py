@@ -61,7 +61,7 @@ def countdown():
     count.clear()
 
 
-def pos_gen():
+def position_gen():
     a = -300
     for i in range(turtles):
         yield a
@@ -74,14 +74,14 @@ def color_gen():
         yield i
 
 
-def turtle_position():
+def position():
     color = color_gen()
-    pos = pos_gen()
+    pos = position_gen()
     for i in range(turtles):
         racers.append(Racer(next(color), (-400, next(pos))))
 
 
-def turtle_run():
+def move():
     while True:
         for i in racers:
             Racer.move(i)
@@ -91,13 +91,13 @@ def turtle_run():
 
 def reset():
     print('Do you wanna rematch? - yes/no')
-    Input = input()
-    if Input == 'yes':
+    user_input = input()
+    if user_input == 'yes':
         racers.clear()
         turtle.clearscreen()
         main_loop()
 
-    elif Input == 'no':
+    elif user_input == 'no':
         print('See you next time!')
         quit()
 
@@ -108,9 +108,9 @@ def reset():
 
 def main_loop():
     meta_gen()
-    turtle_position()
+    position()
     countdown()
-    if turtle_run():
+    if move():
         reset()
 
 
