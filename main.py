@@ -49,9 +49,9 @@ def meta_gen():
 
 
 def countdown():
-    n = 3
     count = turtle.Turtle()
     count.ht()
+    n = 3
     for i in range(3):
         count.write(n - i, font=('Ariel', 30, 'normal'))
         sleep(1)
@@ -69,7 +69,7 @@ def position_gen():
 
 
 def color_gen():
-    color = ("red", "green", "blue", 'yellow', 'pink', 'orange', 'purple')
+    color = ("red", "green", "blue", 'black', 'pink', 'orange', 'purple')
     for i in color:
         yield i
 
